@@ -49,8 +49,8 @@
     if(fileType === 'image/png' || fileType === 'image/jpeg'){
       // Spinner and message saying it took
       // Clear files after sent
-      //myFunction();
       document.getElementById('loader').style.display='block';
+      document.getElementById('fileButton').style.display='none';
     }else{
       alert('Sorry that file type isnt an image');
     }
