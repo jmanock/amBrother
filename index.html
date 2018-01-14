@@ -3,12 +3,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>uploadImg</title>
+  <title>ImgUpload</title>
+  <style media="screen">
+    .loader{
+      border:16px solid #106c98;
+      border-radius:50%;
+      /* border-top:16px solid #b7090f; */
+      border-top:16px solid #28aae8;
+      width:120px;
+      height:120px;
+      -webkit-animation:spin 2s linear infinite;
+      animation:spin 2s linear infinite;
+      display:none;
+    }
+    @-webkit-keyframes spin{
+      0%{-webkit-transform:rotate(0deg);}
+      100%{-webkit-transform:rotate(360deg);}
+    }
+    @keyframes spin{
+      0%{transform:rotate(0deg);}
+      100%{transform:rotate(360deg);}
+    }
+  </style>
 </head>
 <body>
   <input type='file' id='fileButton'>
-
+  <div class="loader" id='loader'></div>
 <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+
 <script>
   // Initialize Firebase
   
@@ -17,10 +39,24 @@
 <script>
   var fileButton = document.getElementById('fileButton');
   fileButton.addEventListener('change', function(e){
+    // Need a message it sent
+    // Need to clear after spinner
+
+
     var file = e.target.files[0];
     var storageRef = firebase.storage().ref(file.name);
-    storageRef.put(file);
+    var fileType = e.target.files[0].type;
+    if(fileType === 'image/png' || fileType === 'image/jpeg'){
+      // Spinner and message saying it took
+      // Clear files after sent
+      //myFunction();
+      document.getElementById('loader').style.display='block';
+    }else{
+      alert('Sorry that file type isnt an image');
+    }
+    //storageRef.put(file);
   });
+
 </script>
 </body>
 </html>
