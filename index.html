@@ -5,11 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ImgUpload</title>
   <style media="screen">
-    .loader{
-      border:16px solid #106c98;
+    #loader{
+      position:absolute;
+      left:50%;
+      top:50%;
+      z-index:1;
+      width:150px;
+      height:150px;
+      margin:-75px 0 0 -75px;
+      border:16px solid lightblue;
       border-radius:50%;
-      /* border-top:16px solid #b7090f; */
-      border-top:16px solid #28aae8;
+      border-top:16px solid blue;
       width:120px;
       height:120px;
       -webkit-animation:spin 2s linear infinite;
@@ -24,11 +30,34 @@
       0%{transform:rotate(0deg);}
       100%{transform:rotate(360deg);}
     }
+    .animate-bottom{
+      position:relative;
+      -webkit-animation-name:animatebottom;
+      -webkit-animation-duration:1s;
+      animation-name:animatebottom;
+      animation-duration:1s;
+    }
+    @-webkit-keyframes animatebottom{
+      from{bottom:-100px; opacity:0}
+      to{bottom:0px; opacity:1}
+    }
+    @keyframes animatebottom{
+      from{bottom:-100px; opacity:0}
+      to{bottom:0; opacity:1}
+    }
+    #myDiv{
+      display:none;
+      text-align:center;
+    }
   </style>
 </head>
 <body>
   <input type='file' id='fileButton'>
-  <div class="loader" id='loader'></div>
+  <div id="loader"></div>
+  <div id="myDiv" style='display:none' class='animate-bottom'>
+    <h2>Thank You!</h2>
+    <p>Your image will be posted shortly. </p>
+  </div>
 <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
 
 <script>
@@ -39,22 +68,26 @@
 <script>
   var fileButton = document.getElementById('fileButton');
   fileButton.addEventListener('change', function(e){
-    // Need a message it sent
-    // Need to clear after spinner
-
-
+    var myVar;
     var file = e.target.files[0];
     var storageRef = firebase.storage().ref(file.name);
     var fileType = e.target.files[0].type;
     if(fileType === 'image/png' || fileType === 'image/jpeg'){
-      // Spinner and message saying it took
-      // Clear files after sent
+      // Need a timer on the spinner then a thank you message
       document.getElementById('loader').style.display='block';
+      myVar = setTimeout(showPage, 3000);
       document.getElementById('fileButton').style.display='none';
     }else{
       alert('Sorry that file type isnt an image');
     }
     //storageRef.put(file);
+    function steps(){
+      document.getElementById('loader').style.display='block';
+    }
+    function showPage(){
+      document.getElementById('loader').style.display='none';
+      document.getElementById('myDiv').style.display='block';
+    }
   });
 
 </script>
