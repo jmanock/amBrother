@@ -1,0 +1,165 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form</title>
+</head>
+<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet">
+<style media="screen">
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
+    color:#aca49c;
+    font-size:0.875em;
+  }
+  input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder{
+    color:#bbb5af;
+  }
+  input::-moz-placeholder, textarea::-moz-placeholder{
+    color:#aca49c;
+    font-size:.875em;
+  }
+  input:focus::-moz-placeholder, textarea:focus::-moz-placeholder{
+    color:#bbb5af;
+  }
+  input::placeholder, textarea::placeholder{
+    color:#aca49c;
+    font-size:.875em;
+  }
+  input:focus::placeholder, textarea:focus::placeholder{
+    color:#bbb5af;
+  }
+  input::-ms-placeholder, textarea::-ms-placeholder{
+    color:#aca49c;
+    font-size:.874em;
+  }
+  input:focus::-ms-placeholder, textarea:focus::-ms-placeholder{
+    color:#bbb5af;
+  }
+  input:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder{
+    color:#e2dedb;
+    font-size:.875em;
+  }
+  input:focus::-ms-placeholder, textarea:focus::-ms-placeholder{
+    color:#bbb5af;
+  }
+  input:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder{
+    color:#e2dedb;
+    font-size:.875em;
+  }
+  input:hover:focus::-webkit-input-placeholder, textarea:hover:focus::-webkit-input-placeholder{
+    color:#cbc6c1;
+  }
+  input:hover::-moz-placeholder, textarea:hover::-moz-placeholder{
+    color:#e2dedb;
+    font-size:.875em;
+  }
+  input:hover:focus::-moz-placeholder, textarea:hover:focus::-moz-placeholder{
+    color:#cbc6c1;
+  }
+  input:hover::placeholder, textarea:hover::placeholder{
+    color:#e2dedb;
+    font-size:.875em;
+  }
+  input:hover:focus::placeholder, textarea:hover:focus::placeholder{
+    color:#cbc6c1;
+  }
+  input:hover::placeholder, textarea:hover::placeholder{
+    color:#e2dedb;
+    font-size:.875em;
+  }
+  input:hover:focus::-ms-placeholder, textarea:hover:focus:-ms-placeholder{
+    color:#cbc6c1;
+  }
+  body{
+    font-family:'love ya like a sister';
+    background:#106c98;
+    color:#b3aca7;
+  }
+  header{
+    position:relative;
+    margin:100px 0 25px 0;
+    font-size:2.3em;
+    text-align:center;
+    letter-spacing:7px;
+  }
+  #form{
+    position:relative;
+    width:500px;
+    margin:50px auto 100px auto;
+    font-family:'love ya like a sister';
+  }
+  input, select{
+    font-size:.875em;
+    font-family:'love ya like a sister';
+    width:470px;
+    height:50px;
+    padding:0px 15px 0px 15px;
+    background:transparent;
+    outline:none;
+    color:#b3aca7;
+    border:solid 1px #b3aca7;
+    border-bottom:none;
+    transition:all .3s ease-in-out;
+    -webkit-transition:all .3s ease-in-out;
+    -ms-transition:all .3s ease-in-out;
+    -moz-trasition:all .3s ease-in-out;
+  }
+  input:hover, select:hover{
+    background:#28aae8;
+    color:#e2dedb;
+  }
+  textarea{
+    width:470px;
+    max-width:470px;
+    height:110px;
+    max-height:110px;
+    padding:15px;
+    background:transparent;
+    outline:none;
+    color:#726659;
+    font-size:.875em;
+    font-family:'love ya like a sister';
+    border:solid 1px #b3aca7;
+    transition:all .3s ease-in-out;
+    -webkit-transition:all .3s ease-in-out;
+    -moz-transition:all .3s ease-in-out;
+    -ms-transition:all .3s ease-in-out;
+  }
+  textarea:hover{
+    background:#28aae8;
+    color:#e2dedb;
+  }
+  #submit{
+    width:470px;
+    padding:0;
+    margin:-5px 0px 0px 0px;
+    font-size:.875em;
+    color:#b3aca7;
+    outline:none;
+    cursor:pointer;
+    border:solid 1px #b3aca7;
+    border-top:none;
+    text-align:center;
+  }
+  #submit:hover{
+    color:#e2dedb;
+  }
+</style>
+<body>
+  <header>
+    Request info about PATRIOT PUP
+  </header>
+  <form id='form' class='topBefore' method="post">
+    <input type="text" id='name' placeholder='NAME'>
+    <input type='text' id='email' placeholder='E-MAIL'>
+    <select class="" name="">
+      <option>About the Book</option>
+      <option>About the Author</option>
+      <option>Speaking</option>
+      <option>Sponsor</option>
+    </select>
+    <textarea id='message' type='text' placeholder='COMMENTS'></textarea>
+    <input id='submit' type='submint' value='SEND'>
+  </form>
+</body>
+</html>
