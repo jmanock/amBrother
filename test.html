@@ -1,0 +1,39 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>htmlEmail</title>
+</head>
+<body>
+  <h2 class='content-head is-center'>Contact Us!</h2>
+  <aside>
+    <p>We would <em>love</em> to hear from you!</p>
+    <p>Please use the <b><em>Contact Form</em></b> to send us a message.</p>
+  </aside>
+
+  <form id='gform' method='POST' class='pure-form pure-form-stacked' data-email='example@email.net' action=''>
+    <fieldset class='pure-group'>
+      <label for='name'>Name: </label>
+      <input id='name' name='name' placeholder='What your Mom calls you'>
+    </fieldset>
+    <fieldset class='pure-group'>
+      <label for='message'>Message: </label>
+      <textarea id='message' name='message'  rows='10'placeholder='Tell us whats on your mind.. '></textarea>
+    </fireldset>
+    <fieldset class='pure-group'>
+      <label for='email' <em>Your</em>Email Address:</label>
+      <input id='email' name='email' type='email' value='' required placeholder='your.name@email.com'>
+      <span id='email-invalid' style='display:none'>
+        Must be a valid email address
+      </span>
+    </fieldset>
+    <fieldset class='pure-group'>
+      <label for='color'>Favourite Color:</label>
+      <input id='color' name='color' placeholder='green'>
+    </fieldset>
+    <button class='button-success pure-button-xlarge'>
+      <i class='fa fa-paper-plane'></i> &nbsp;Send</button>
+    </form>
+</body>
+</html>
