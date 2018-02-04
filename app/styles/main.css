@@ -36,7 +36,6 @@ body {
   grid-gap:0px;
   background-color:#006B9A;
   padding:0px;
-  margin:0;
   grid-template-rows:300px 100px 100vh 100vh 100vh 200px;
 }
 .item1{
